@@ -1,0 +1,530 @@
+=================================================
+React-Bootstrap Setup, Header & Footer Components
+=================================================
+1. Create directory named ecommerce
+2. Run crao -n frontend inside this directory.
+3. cd frontend and run chmod +x node_modules/.bin/react-scripts to make
+react-scripts executable to be able to run npm start.
+4. Create new directory named components inside of src.
+5. Create Header.js inside components directory.
+https://drive.google.com/file/d/1aEA0gzdCZy5G9xj-Vdj254j-n4nqd1XF/view?usp=sharing
+6. Create Footer.js inside components directory.
+https://drive.google.com/file/d/19CL-TWEe_eFN2SHBD9mcNJp_NVX7tAgH/view?usp=sharing
+7. import Header and Footer components inside of App.js.
+https://drive.google.com/file/d/15tBI4aMXZT6Kbl9EAh9YYn8-9B4OJlEJ/view?usp=sharing
+8. Go to bootswatch.com and download bootstrap.min.css from LUX theme.
+9. Put bootstrap.min.css inside src.
+10. import bootstrap.min.css inside index.js.
+11. Run npm i react-bootstrap
+12. Go to App.js and import {Container} from 'react-bootstrap'
+https://drive.google.com/file/d/1y_hIHNqI4MOnZSCRbqq5pVOY_M3KrD8F/view?usp=sharing
+13. Give className="py-3" to main tag inside App.js for vertical padding.
+14. Now customize Footer component.
+https://drive.google.com/file/d/1E4cCnfjiSVc316wUHfxTIDAIGkrU-lSd/view?usp=sharing
+15. Now in index.css give main tag a min-height: 80vh
+16. Now copy navbar code from react bootstrap website and remove previous JSX
+from Header component and paste navbar code between <header> </header> tags.
+17. Remove form and dropdown from navbar code and add (bg="dark"
+variant="dark" collapseOnSelect) in Navbar tag.
+18. Wrap entire content between <Navbar> </Navbar> tag with <Container>
+</Container> tag.
+19. Change link names to ProShop, Cart and Login and href to '/', '/cart' and
+'/login'.
+20. Go to cdnjs.com and copy link tag for fontawesome and paste in index.html.
+21. Add <i className="fas fa-shopping-cart"></i> before Cart text between
+Nav.Link and <i className="fas fa-user"></i> before Login.
+
+==========================
+HomeScreen Product Listing
+==========================
+22. Download product.js from link given below and place inside src directory.
+https://drive.google.com/file/d/1jeA-2oZpN-B_IDIdsxf_dKpNeLwjJO0o/view?usp=sharing
+23. Download images folder from link given below and place inside public
+directory.
+https://drive.google.com/drive/folders/1Ic-wyu9WCcM-LEpNDD_Gbzu0KFEBHstc?usp=sharing
+24. Create screens directory inside src.
+25. Create HomeScreen.js inside screens directory.
+https://drive.google.com/file/d/1NTAkG7tgbAOBGHw_9igSuWDRmfhdRl3h/view?usp=sharing
+26. Add HomeScreen component inside of App.js in place of <h1>Welcome</h1>.
+27. Create Product.js inside components directory.
+https://drive.google.com/file/d/17dehoNlCFY_BQKf3_uRgSHa0QCKFMmp3/view?usp=sharing
+https://drive.google.com/file/d/1kI7RcOaxfvxXaM04rnWjV5XMSfq8k9Ca/view?usp=sharing
+
+================
+Rating Component
+================
+28. Replace "{product.rating} from {product.numReviews} reviews" with "<Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#f8e825'} />" inside of product.js.
+29. Create Rating.js in components directory.
+https://drive.google.com/file/d/19gzpLZA83PDYIPfqngYj0_hVfJo4Rk3C/view?usp=drivesdk
+https://drive.google.com/file/d/19suwVmG5tjKFZcAs6ogFkDNs1RF1gL1G/view?usp=drivesdk
+30. Update index.css.
+https://drive.google.com/file/d/19vG0TgdoLxqGTlR6erNd_Yh4fPQRNNQ_/view?usp=drivesdk
+
+=========================
+Implementing React Router
+=========================
+31. Run "npm i react-router-dom react-router-bootstrap" for routing functionality.
+32. import {BrowserRouter as Router, Route} from 'react-router-dom' in App.js.
+https://drive.google.com/file/d/1OC8l_6dhi6Pmqow80CyNEDdKAymgslGg/view?usp=sharing
+
+======================
+Product Details Screen
+======================
+33. Create ProductScreen.js inside of screens directory.
+34. In Product.js import {Link} from 'react-router-dom' and change <a> to <Link> and "href" to "to".
+35. import {LinkContainer} from 'react-router-bootstrap' in Header.js and wrap each nav link with <LinkContainer> and remove href from nav links and use "to" in <LinkContainer> for redirecting.
+https://drive.google.com/file/d/1kw6CPykOo-p9LZq-8jrzxFIMff93StqT/view?usp=sharing
+
+====================
+Building The Backend
+====================
+36. Activate virtual environment inside of ecommerce directory.
+37. Install django in virtual environment.
+38. Run "django-admin startproject backend" from ecommerce directory with virtual environment activated.
+39. Run "python manage.py startapp base".
+40. Add base to INSTALLED_APPS in settings.py.
+41. Install djangorestframework and add to INSTALLED_APPS as 'rest_framework'
+views.py => https://drive.google.com/file/d/1_yFTX1cMxYCTmZGjSA_Iey-DJZXXDM-X/view?usp=sharing
+urls.py => https://drive.google.com/file/d/1rXaTVAFW3YLVvyCmvsKxh0Rs3tR8pUzP/view?usp=sharing
+
+=============
+Fetching Data
+=============
+42. Install axios using "npm i axios"
+43. Add "proxy": "http://127.0.0.1:8000" to package.json.
+HomeScreen.js => https://drive.google.com/file/d/1SWS7PFrHupd-osybwnwiQpw5lHarSorB/view?usp=sharing
+ProductScreen.js => https://drive.google.com/file/d/1A5PQC97-1d8QWXs0J1Jd-hdFN5ARKnZT/view?usp=sharing
+
+=================
+Modeling Our Data
+=================
+models.py => https://drive.google.com/file/d/1NrvfOZrQ_rMRxX9wEoTrVmgm6_gRf6rk/view?usp=sharing
+
+============
+Media Files
+============
+44. Add this to settings.py => MEDIA_ROOT = os.path.join(BASE_DIR, 'media') and MEDIA_URL = '/media/'
+45. Add this to root urls.py => from django.conf import settings, from django.conf.urls.static import static, urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+================
+Serializing Data
+================
+serializers.py => https://drive.google.com/file/d/1NiLlaNGoOEwdm2x1sQltQYGduunaE3tr/view?usp=sharing
+views.py => https://drive.google.com/file/d/1XvUO-17y-xai2TjlN10WW_YpPB8XD2hs/view?usp=sharing
+
+==================
+Create Redux Store
+==================
+46. Install redux devtools extension for your browser from link given below:
+redux devtools => https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd
+47. Install these modules => npm i redux react-redux redux-thunk redux-devtools-extension
+48. Create store.js inside of src folder.
+store.js => https://drive.google.com/file/d/1QEe7Whxg5-FKwLbpgWgIOpNr2h4p629Q/view?usp=sharing
+index.js => https://drive.google.com/file/d/12vjro6-FERO5kKsG5CJK7soJlS8jpJGc/view?usp=sharing
+
+=============================
+Product List Reducer & Action
+=============================
+src/constants/productConstants.js => https://drive.google.com/file/d/1dPwrOT7-0pqaARn34v5UCdlYGxChx8lp/view?usp=sharing
+src/actions/productActions.js => https://drive.google.com/file/d/1OqHXIkSisM-ENP9ncSlyQwkQRksDTj0g/view?usp=sharing
+src/reducers/productReducers.js => https://drive.google.com/file/d/1DxQa107dDS_LmlecJz2UeIiOg88kd6MT/view?usp=sharing
+
+================================
+Bringing Redux Intro Home Screen
+================================
+HomeScreen.js => https://drive.google.com/file/d/16inEJckcPywxCuu9m7fxavo5hmbiddF_/view?usp=sharing
+
+==========================
+Message & Loader Component
+==========================
+components/Loader.js => https://drive.google.com/file/d/107b7cpaT692P3BPTKye6GjHofoFyzlg5/view?usp=sharing
+components/Message.js => https://drive.google.com/file/d/15rZ9SRRpH4Z_QB1j_Ov7k0k0WClWTJsZ/view?usp=sharing
+HomeScreen.js => https://drive.google.com/file/d/1F0Nrgm1X8NqlgxWvqoyZISmC0sklGqYY/view?usp=sharing
+
+================================
+Product Details Reducer & Action
+================================
+src/constants/productConstants.js => https://drive.google.com/file/d/1kqRl-JQIuBaDO7DPd16LZ-ZghUaiNHa1/view?usp=sharing
+src/actions/productActions.js => https://drive.google.com/file/d/1odHuBOEz2VAN9qCUMk3Mu-U-opnllu4J/view?usp=sharing
+src/reducers/productReducers.js => https://drive.google.com/file/d/1FQbPHLpHbKWCB5MC_MRKDgOYDmVCs3cJ/view?usp=sharing
+src/screens/ProductScreen.js => https://drive.google.com/file/d/1caIKjKlXm8Dnrzd9huf7v6rUNdjgrzsU/view?usp=sharing
+
+========================
+Qty Select & Add To Cart
+========================
+ProductScreen.js => https://drive.google.com/file/d/1W1SVoAxAN3RFfPqunfNoolC1mUNjoEHb/view?usp=sharing
+CartScreen.js => https://drive.google.com/file/d/1J1JFRq0w0aEeizX8xgxAdqO1vy1akbOi/view?usp=sharing
+App.js => https://drive.google.com/file/d/1CAJFn-o7Utb_a90P_Q1OzkVmCrXYTxsf/view?usp=sharing
+
+=====================
+Cart Reducer & Action
+=====================
+cartConstants.js => https://drive.google.com/file/d/1xqiPRa8P029GhgC2-i3dKdXMEgsaX1eI/view?usp=sharing
+cartReducers.js => https://drive.google.com/file/d/1EPXvS75WEYrkwv3Ggzpxx3tD64ZIhktY/view?usp=sharing
+cartActions.js => https://drive.google.com/file/d/12MwUE7YGRtnSN-Xlq8YZvmzvCEZe7DWX/view?usp=sharing
+store.js => https://drive.google.com/file/d/1bCHwPxyboUFCaCookF2_HU-KJNnCHhpj/view?usp=sharing
+
+=========================
+Add To Cart Functionality
+=========================
+CartScreen.js => https://drive.google.com/file/d/1ZsDqU_9aNBWr8cRCi2wXFkqZFHwyxJ_b/view?usp=sharing
+
+===========
+Cart Screen
+===========
+CartScreen.js => https://drive.google.com/file/d/1RnUmb7Qrqwfkv2S1hMSSSymPQRe6bCDM/view?usp=sharing
+
+======================
+Remove Items From Cart
+======================
+cartReducers.js => https://drive.google.com/file/d/15arU_nQ2pZIznSf5HRbxsSDV1ztYG8GA/view?usp=sharing
+cartActions.js => https://drive.google.com/file/d/1J4QPYb6UXMUhDMJSqbKKyD-TGPBQGbqU/view?usp=sharing
+CartScreen.js => https://drive.google.com/file/d/1428JGd9BL_MOuzSlyHa_bfK4-imUvomu/view?usp=sharing
+
+===================================
+JSON Web Token Installation & Setup
+===================================
+1. pipenv install djangorestframework-simplejwt
+2. Add below code to settings.py:
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+3. Now add below code in url.py of app:
+from rest_framework_simplejwt.views import TokenObtainPairView
+path('users/login/', TokenObtainPairView.as_view(), name='token_obtain_pair')
+4. Add following code to settings.py:
+from datetime import timedelta
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30)
+}
+
+=================
+JWT Customization
+=================
+views.py => https://drive.google.com/file/d/1cSfPGUwkADBZgYRnTl3WnpL8--OLYbQZ/view?usp=sharing
+urls.py => https://drive.google.com/file/d/1r4SVzv0gRdNisc2VUkEjOxH00fvQS2bw/view?usp=sharing
+
+===============
+User Serializer
+===============
+serializers.py => https://drive.google.com/file/d/1qXpBoimzjKU_NHyMqjzMHapSeIqdLLxs/view?usp=sharing
+views.py => https://drive.google.com/file/d/1X_KlUZMG-1I0Fnp8WzL4LPGnZ5-F2Oad/view?usp=sharing
+urls.py => https://drive.google.com/file/d/1gD6PWZmgO-SvDjFaVQIwZClJKXqnksA4/view?usp=sharing
+
+================
+Protected Routes
+================
+views.py => https://drive.google.com/file/d/180tPniJIMfSNiSvBGs1G9H2Fr3p9jhYs/view?usp=sharing
+urls.py => https://drive.google.com/file/d/1dLwV17SVUWrJKb8IYWgN4QbqaopQECX2/view?usp=sharing
+
+=============
+Register User
+=============
+views.py => https://drive.google.com/file/d/1B6YJHNbjqclC9bjN4qg3P53Uwk2aP_4d/view?usp=sharing
+urls.py => https://drive.google.com/file/d/1SQ8SZ41i85seOF31_WTANKMMD7Wc2UyK/view?usp=sharing
+
+================
+Login With Email
+================
+base/signals.py => https://drive.google.com/file/d/1XxCRnyra4Rdeu2WJYh2J6W9jysa2RdTM/view?usp=sharing
+apps.py => https://drive.google.com/file/d/1_cY0-arlxYc0clLec6wcqXihWtH6SthK/view?usp=sharing
+
+=====================
+URL's & Views Cleanup
+=====================
+backend/urls.py => https://drive.google.com/file/d/1-G7wdtSUW2_bQd4mw3rFjMt_tH64rImP/view?usp=sharing
+views/product_views.py => https://drive.google.com/file/d/1ww-VISmqXZjBO7tfJzU1tOghywPTbGDP/view?usp=sharing
+views/user_views.py => https://drive.google.com/file/d/1IeUsC43PJvXGboGdNz4wGD2bZaT-xgS4/view?usp=sharing
+urls/order_urls.py => https://drive.google.com/file/d/1PJ4h9htwBF_TN0l5FU3ybyDO6bWv-60b/view?usp=sharing
+urls/product_urls.py => https://drive.google.com/file/d/1NXs--oWwCb3riAOyq4aRbGpw_1HGZJmc/view?usp=sharing
+urls/user_urls.py => https://drive.google.com/file/d/1MlAv3ZFFSb5itRFpWouJwdkssnKF8GYN/view?usp=sharing
+
+===========================
+User Login Reducer & Action
+===========================
+productActions.js => https://drive.google.com/file/d/1sD1B7JdIK2o2IEQ2HSozVvsqwGOlCe5N/view?usp=sharing
+userConstants.js => https://drive.google.com/file/d/1GYrxayeIBflpwEf9mNxRzM_DADCHVSK6/view?usp=sharing
+userReducers.js => https://drive.google.com/file/d/1izZHqJibjHXpsvM4we7jdwQrwQ5dzpNR/view?usp=sharing
+store.js => https://drive.google.com/file/d/1n30rFy8FsbGffO0q3W48ww6PGveMrysh/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/190JiHxYW1G5KZJg9BuTr65wEO-mHWsuH/view?usp=sharing
+
+=================================
+User Login Screen & Functionality
+=================================
+screens/LoginScreen.js => https://drive.google.com/file/d/1jP0m0pya3tKXwBYmAjbO0P7N7Te6uNRH/view?usp=sharing
+App.js => https://drive.google.com/file/d/1yuuj7zpY3W7RAUkMeljNzwCgTrDPIOyE/view?usp=sharing
+components/FormContainer.js => https://drive.google.com/file/d/1Av7lSSYLOrRUj8rRbbErMan4J3JaqMvS/view?usp=sharing
+
+=======================
+User In Navbar & Logout
+=======================
+Header.js => https://drive.google.com/file/d/1QKD4OtrRMYPG0Jj1ek3m4w2G8whynZcL/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/1v9qTUtTGDTR9tVevTonf8uVQ4e3xzm3a/view?usp=sharing
+
+======================================
+User Register Reducer, Action & Screen
+======================================
+userConstants.js => https://drive.google.com/file/d/1WNs5PmwGwmLYJbHg-XMfsyhVo7DktOR9/view?usp=sharing
+userReducers.js => https://drive.google.com/file/d/1jrI9wAEeH9LpHTmBeRUiFjibWTqrNINU/view?usp=sharing
+store.js => https://drive.google.com/file/d/1okPRIpfgLwI3eB9Ag1pDUSKkI8FV7q5F/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/11yrkOK0o55Gp4ceRra6mtjV4svbJIYPk/view?usp=sharing
+RegisterScreen.js => https://drive.google.com/file/d/1tH0YSrB2-nm9IEOTyk6yQVdN1IGylIiV/view?usp=sharing
+App.js => https://drive.google.com/file/d/1UMS8TtMjOcP2Ur7EKwZz0cOpSsQOu6DW/view?usp=sharing
+
+=======================
+Update Profile Endpoint
+=======================
+user_views.py => https://drive.google.com/file/d/1uFCTI-qxtwLLuA9kzOq1BDIS2lIe26ZC/view?usp=sharing
+user_urls.py => https://drive.google.com/file/d/1sGO83qta0w3X-QK9N_6O8kXsPe0_FhmH/view?usp=sharing
+
+=================================
+Profile Screen & Get User Details
+=================================
+userConstants.js => https://drive.google.com/file/d/1PlI8i1Y1mEn_REi-CB0-kQOdxLvu07GW/view?usp=sharing
+userReducers.js => https://drive.google.com/file/d/1tZYIbHy1Vk9-mKySkErCT3kb9pUP8xmf/view?usp=sharing
+store.js => https://drive.google.com/file/d/1c7WKtLpbv-MwPlomZ4_1SEZzaJYQqWuv/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/1kkQL4Hvc1KuzdlHpRJ31pUFSQhm5-jxE/view?usp=sharing
+ProfileScreen.js => https://drive.google.com/file/d/1IlaC2SRZtjXc_g1WrSH2W9Ity2_05fD4/view?usp=sharing
+App.js => https://drive.google.com/file/d/1ErG98HwgStXxAnZ6k2S0uo-8oreN-e7p/view?usp=sharing
+
+===================
+Update User Profile
+===================
+userConstants.js => https://drive.google.com/file/d/1vsxvTTkSmKhNoCvtE7FmyGYgVftaGnMi/view?usp=sharing
+userReducers.js => https://drive.google.com/file/d/1VDIoI1D6io0tlSkLzPXUX2q9QTH8jg9g/view?usp=sharing
+store.js => https://drive.google.com/file/d/10H3IHHP4SbDWgyBSdqfhRvj6lGwmlDwY/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/1HpmcPRQHiSi70OnxGX_Z-l1kqxFQLNsY/view?usp=sharing
+ProfileScreen.js => https://drive.google.com/file/d/1kPkxvcmypEwykBuKgc-4J_0RjGR4yBYW/view?usp=sharing
+
+==============================
+Shipping Screen & Save Address
+==============================
+ShippingScreen.js => https://drive.google.com/file/d/1jDycGloek0ReeQwCMdYtQrb0U3chu3yd/view?usp=sharing
+App.js => https://drive.google.com/file/d/1eqeR8ucHjkm-pwiiwl-y5wKUsy6sGOyl/view?usp=sharing
+cartActions.js => https://drive.google.com/file/d/1xGrOepFSw39_cLmHm5H_CfqkWHzTi_ZV/view?usp=sharing
+cartConstants.js => https://drive.google.com/file/d/1Z1DSnXyY1HJ1_dD-BLmhQZQ9CGDyXrHh/view?usp=sharing
+cartReducers.js => https://drive.google.com/file/d/1-Qr6NLXE8Hy2nVraalV9wSvg1efvjJ6S/view?usp=sharing
+store.js => https://drive.google.com/file/d/1GN0lM6gywCrAPIrt6wbpeQRSPfhL9dQU/view?usp=sharing
+
+========================
+Checkout Steps Component
+========================
+components/CheckoutSteps.js => https://drive.google.com/file/d/1RrQpdP0MnyawOykWiHg3MtKdCvHJrvdV/view?usp=sharing
+ShippingScreen.js => https://drive.google.com/file/d/1aFofOZhOe8SmN_zYm1b4mLKpZdoq0GKm/view?usp=sharing
+
+====================================
+Payment Screen & Save Payment Method
+====================================
+PaymentScreen.js => https://drive.google.com/file/d/1YeO1FOTOX1hJBaLltln5peP9NkYTh6OU/view?usp=sharing
+App.js => https://drive.google.com/file/d/1E4vNrtG-x529VbaxBiTBqPqG2ZMlZrtC/view?usp=sharing
+cartConstants.js => https://drive.google.com/file/d/12Smc1r9N5ChvzvZyEQ7tx41Yd5zwSnzX/view?usp=sharing
+cartReducers.js => https://drive.google.com/file/d/13VV61CxqRSQJawWJ-e-KA51zl4UMVYzT/view?usp=sharing
+cartActions.js => https://drive.google.com/file/d/14-9Sfgu9iUoIZX5p6EGaeMlRAxh8SMFa/view?usp=sharing
+
+==================
+Place Order Screen
+==================
+PlaceOrderScreen.js => https://drive.google.com/file/d/12tDHrMwHBF7LlTRxupQM5llJynJmi_mV/view?usp=sharing
+App.js => https://drive.google.com/file/d/1fxww53qaN4G6-r6j8Ri89mM72ME-KA90/view?usp=sharing
+
+================
+Order View & URL
+================
+order_views.py => https://drive.google.com/file/d/1q1XzCqXrEgGPmt7gVMYjqnn63GIKVFrH/view?usp=sharing
+order_urls.py => https://drive.google.com/file/d/16wnn1dU7X2Q79bisTwFpEHBhvJD6AFR0/view?usp=sharing
+serializers.py => https://drive.google.com/file/d/1uJsztXkOn8q7EX5hrTw9WoVFSOKIhnC9/view?usp=sharing
+
+============
+Create Order
+============
+orderConstants.js => https://drive.google.com/file/d/1OBXNiRC6Go4iE6L-5m1rXR1rn5CNeool/view?usp=sharing
+orderReducers.js => https://drive.google.com/file/d/1xkUGbUNlD5T3YM9Qsla2OLgTx9JJ1GQK/view?usp=sharing
+store.js => https://drive.google.com/file/d/1jciW9Wk1c2KBLmIVF58RZ7_6ws2pjfWU/view?usp=sharing
+orderActions.js => https://drive.google.com/file/d/1jw7vEzj7aA3dDza27xZA7RTL1uTDsNK2/view?usp=sharing
+PlaceOrderScreen.js => https://drive.google.com/file/d/1Uj-_VbeBMWrApz8zFHnEjk4RaJN94S7J/view?usp=sharing
+cartConstants.js => https://drive.google.com/file/d/1t20EmuNjIkTIIF7oIqMrw-DPu95TYf4N/view?usp=sharing
+cartReducers.js => https://drive.google.com/file/d/17uPBP9N1gA037g2vayUI7sKFkebgsoWt/view?usp=sharing
+
+========================
+Get Order By Id Endpoint
+========================
+order_views.py => https://drive.google.com/file/d/1b05oM6fWRFNIji6UknCS6svMc5xdpx_m/view?usp=sharing
+order_urls.py => https://drive.google.com/file/d/1mZxjaD35uVFbG9qk0H5xiwo1BFzsTjpV/view?usp=sharing
+serializers.py => https://drive.google.com/file/d/1FTIPWhI3tBBgGIagLCfjjyClZReXu0Qz/view?usp=sharing
+
+==============================
+Order Details Reducer & Action
+==============================
+orderConstants.js => https://drive.google.com/file/d/1NjpjwxYj9BmcHxmmrbgdRu1f6aT7RoY4/view?usp=sharing
+orderReducers.js => https://drive.google.com/file/d/1Do4IIWXy6UyZcGRI_c_mp7Z5MwVwGj89/view?usp=sharing
+store.js => https://drive.google.com/file/d/1ZGbWJPPnfEHcRSqjsZZObEv8I4zCxpK6/view?usp=sharing
+orderActions.js => https://drive.google.com/file/d/1rXR9MYpLDvgwxOC54esuuGFoqEvS5mt5/view?usp=sharing
+
+============
+Order Screen
+============
+OrderScreen.js => https://drive.google.com/file/d/1CWrxOLL9zUxkxTSPQOpzxkQTZfIR9Xd2/view?usp=sharing
+App.js => https://drive.google.com/file/d/1MzK2rnO_kv7jKtuK-Pb68DyADg31fPeg/view?usp=sharing
+serializers.py => https://drive.google.com/file/d/1NJUJrHIp0V_FPzwaKS_ECVR8dfus8eQ1/view?usp=sharing
+
+=======================
+Update To Paid Endpoint
+=======================
+order_views.py => https://drive.google.com/file/d/1JKI_NGDTRgxwDrXA4mvu11jFBwyaqZlI/view?usp=sharing
+order_urls.py => https://drive.google.com/file/d/1hQ0ale03QU2TjobENNYwD7U0J5SDfYmY/view?usp=sharing
+
+==========================
+Order Pay Reducer & Action
+==========================
+orderConstants.js => https://drive.google.com/file/d/1xIF7xw6ZWVU3PjLpoNmDylFACp4wqP27/view?usp=sharing
+orderReducers.js => https://drive.google.com/file/d/1bvvfMOKIPmCdm2F4AnHczhkAtN6FbA0x/view?usp=sharing
+store.js => https://drive.google.com/file/d/1jXoMpEahKDGk7uJJOxbbIAbTGs3nYX0i/view?usp=sharing
+orderActions.js => https://drive.google.com/file/d/11GsZ-gChKaBq9eWC8jkBRqxyI6zTdigt/view?usp=sharing
+
+===============
+PayPal Payments
+===============
+OrderScreen.js => https://drive.google.com/file/d/1TjG1HlgKclDVyRflZ5O7wShvbIkBLhZC/view?usp=sharing
+
+======================
+Orders In Profile Page
+======================
+order_views.py => https://drive.google.com/file/d/1a8gdBfa638EXd6rM9EuUWwSrGaby1URP/view?usp=sharing
+order_urls.py => https://drive.google.com/file/d/178yAEa82w-ePCdKc2hHCg94s9wdrcmhR/view?usp=sharing
+orderConstants.js => https://drive.google.com/file/d/1HDuy70M6BNdJFUXoE-80ztdWYI4ngrx6/view?usp=sharing
+orderReducers.js => https://drive.google.com/file/d/1dtV4M6Z2j_ZZStz0A7aV2bKBIXVTEeLD/view?usp=sharing
+store.js => https://drive.google.com/file/d/1ATdWMlRwAHFrr2bkE4N9udaRR4wOtZDY/view?usp=sharing
+orderActions.js => https://drive.google.com/file/d/1wa1KaBMzjEDKtpvdxPHZeGaHptCKsYU5/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/1p583td0iVt5Rv9jUuYVgBOOK9fYZCoDb/view?usp=sharing
+ProfileScreen.js => https://drive.google.com/file/d/1qDD2YZ3fk8oIlUszSX_FfbUm95wVIoZI/view?usp=sharing
+
+==================================
+User List Reducer, Action & Screen
+==================================
+userConstants.js => https://drive.google.com/file/d/1IavzHDECDFQl9IwGE3bXlefDnQDDm9ku/view?usp=sharing
+userReducers.js => https://drive.google.com/file/d/1YF_Bd4B8EwSUfx7G8Hb7qT8zONyfnf4t/view?usp=sharing
+store.js => https://drive.google.com/file/d/1fa2thvLHrsoM_TPfuuf--wbhVD2IAjLd/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/1EF5M_YutDTIKONrYoEUMKfb86QI06oes/view?usp=sharing
+UserListScreen.js => https://drive.google.com/file/d/1BjNDlISzywOTn-Lxdo8DtMKhPslabSyA/view?usp=sharing
+App.js => https://drive.google.com/file/d/1sVmuwUf7tSAynNNpScs0IakQI9cQUmD7/view?usp=sharing
+Header.js => https://drive.google.com/file/d/1ZdHWBjzHSiSeR6q3H_WppEvg6gJ4EH7n/view?usp=sharing
+
+=================
+Admin User Delete
+=================
+user_views.py => https://drive.google.com/file/d/1FOcwOpX6fLn7X8pgV1BCQ4fa2oEiAlZc/view?usp=sharing
+user_urls.py => https://drive.google.com/file/d/1sSvLEXqfhdGIHPza1O2fG0gZn9-0hxIO/view?usp=sharing
+userConstants.js => https://drive.google.com/file/d/1t3uIONNpGBiMQjrPQ83pO3AlHRnTScJN/view?usp=sharing
+userReducers.js => https://drive.google.com/file/d/16jr9MHiX5LxQXWB9qsQzLHjAg9hnnCOj/view?usp=sharing
+store.js => https://drive.google.com/file/d/1ZOSZ8iz-K3WAbRIKcdeG0MWEKk6H7orW/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/10gcCOUnSdkbZN6KhYiVLrqNEfNxSqhR_/view?usp=sharing
+UserListScreen.js => https://drive.google.com/file/d/11EE8Ask0vwqDriciLXyWz_8wcsiN5JgZ/view?usp=sharing
+
+======================================
+Get User By ID & Update User Endpoints
+======================================
+user_views.py => https://drive.google.com/file/d/1sfyY8SXat87Wiw6RcmFk2JYdzqo6PfZP/view?usp=sharing
+user_urls.py => https://drive.google.com/file/d/1SWCBMl697O9a70XMlV4L4vK1JwI4EuPF/view?usp=sharing
+
+===================================
+User Edit Screen & Get User Details
+===================================
+UserEditScreen.js => https://drive.google.com/file/d/1TDZVzkDBSFE98WB0Tb5fuaj9yBvhZDlb/view?usp=sharing
+App.js => https://drive.google.com/file/d/1N5xXl4PMbICrnMkvJVqUh7HkiAwGOl4G/view?usp=sharing
+
+=========================
+Update User Functionality
+=========================
+userConstants.js => https://drive.google.com/file/d/1Jdsvd3uBfs8IlfBKeWcE42MH1Fqc0RE-/view?usp=sharing
+userReducers.js => https://drive.google.com/file/d/1G8gg9X-P3791MdTkUP82ONy-6iUFPNBy/view?usp=sharing
+store.js => https://drive.google.com/file/d/1b-rJvAkGI7njnwQpO-kIhzLcCYkhno0K/view?usp=sharing
+userActions.js => https://drive.google.com/file/d/1NbdYAEkj9MT0UowdUS9gQBHz-VUOdR1F/view?usp=sharing
+UserEditScreen.js => https://drive.google.com/file/d/1n2WCbn1ptLQwKEmL8EynGn2qS0w3fXs1/view?usp=sharing
+
+===================
+Admin  Product List
+===================
+ProductListScreen.js => https://drive.google.com/file/d/1V1kE9CAhm75hMy_9xYxlzv0kb6HJpUJe/view?usp=sharing
+App.js => https://drive.google.com/file/d/12qdQWrjw0cnmdntSSyLRPM_X-Eoave2x/view?usp=sharing
+
+===============
+Delete Products
+===============
+product_views.py => https://drive.google.com/file/d/1NXQy2vxSNnWTm6xA5CNj92HrpTI8eouE/view?usp=sharing
+product_urls.py => https://drive.google.com/file/d/11NxBjaUP2CwqgeK1tl0CYouv1rEKqKHg/view?usp=sharing
+productConstants.js => https://drive.google.com/file/d/15hb5A28D-UoLZc3qNCcu7QJna5l09UsH/view?usp=sharing
+productReducers.js => https://drive.google.com/file/d/1At_AEVnDawiSF8HLwFxm-YqW65tiBRTV/view?usp=sharing
+store.js => https://drive.google.com/file/d/1e9lK0hLaAlpgPWIRG06YtPhEvFZIxAii/view?usp=sharing
+productActions.js => https://drive.google.com/file/d/1VY2tEE0KE_ghNCHtETqUN_JEM0qeET1A/view?usp=sharing
+ProductListScreen.js => https://drive.google.com/file/d/1J7W5mJVti0V2pAA0WzaqHTImR3ZsFOWv/view?usp=sharing
+
+==================================
+Create & Update Products Endpoints
+==================================
+product_views.py => https://drive.google.com/file/d/1O6mqJHjbEy7uhQmJoffzmp_iAtB2Lmve/view?usp=sharing
+product_urls.py => https://drive.google.com/file/d/1qe5XAdIx6Pr-fQwZlbuEDR5YOW8RA9PC/view?usp=sharing
+models.py => https://drive.google.com/file/d/14ail7ea_RvDLVlbvd6Q580UjnrXpfljh/view?usp=sharing
+
+====================
+Admin Create Product
+====================
+productConstants.js => https://drive.google.com/file/d/1F5SR3lmmcye1BrkEkkHwqhPN8VjZWJrw/view?usp=sharing
+productReducers.js => https://drive.google.com/file/d/1qAmqj1FTU67NzmfQ5PmhQb8IlXmgdrFb/view?usp=sharing
+store.js => https://drive.google.com/file/d/1OEhZlzxC9yC6E16FXXePmsfuotH_7bIl/view?usp=sharing
+productActions.js => https://drive.google.com/file/d/1oEif4TjN1jNJZxKSf6oEGVWsTZ67oNBL/view?usp=sharing
+ProductListScreen.js => https://drive.google.com/file/d/1vXxs1EQv42rCe1aPe4eUMiBPEVr-YL7K/view?usp=sharing
+
+===================
+Product Edit Screen
+===================
+ProductEditScreen.js => https://drive.google.com/file/d/1tzL87eRoJ9MV0kylOA6vH44_8UUQwJNA/view?usp=sharing
+App.js => https://drive.google.com/file/d/1xXR96o71ud1FCkp6NB6tHMBy7kS2EhEd/view?usp=sharing
+
+==========================
+Edit Product Functionality
+==========================
+productConstants.js => https://drive.google.com/file/d/1o_OyDThGZKU3bJNwtIugNiBl-feOaEis/view?usp=sharing
+productReducers.js => https://drive.google.com/file/d/1P8DrLUHPe-btl5X9f-1Bg3Cmnxth46Hh/view?usp=sharing
+store.js => https://drive.google.com/file/d/1tjm4SsEVIb8dE5GY25--1KUjQifP0jMp/view?usp=sharing
+productActions.js => https://drive.google.com/file/d/1_va2OnpUDJgvpyZHI7AKBeqW1ujbU1o-/view?usp=sharing
+ProductEditScreen.js => https://drive.google.com/file/d/1iDN8XwAljX3y6-nSAVGNz8PtLY2Py7Xr/view?usp=sharing
+
+====================
+Product Image Upload
+====================
+product_views.py => https://drive.google.com/file/d/1vZlHa0MvgUgaCLJ7K8QQkN8mXW47fukJ/view?usp=sharing
+product_urls.py => https://drive.google.com/file/d/1IwN0lzTYUojKri-wEj1zs-zoB-wBMTRT/view?usp=sharing
+ProductEditScreen.js => https://drive.google.com/file/d/1QceiZrW2JS-dZwG30-gtooLeaceI7BnU/view?usp=sharing
+
+================
+Admin Order List
+================
+order_views.py => https://drive.google.com/file/d/1iEhQIrCtmOjGxX398mBfCsubTniiLlAC/view?usp=sharing
+order_urls.py => https://drive.google.com/file/d/1AT2iStPXLttLjgVd7Grp_oaaSitSKw3U/view?usp=sharing
+orderConstants.js => https://drive.google.com/file/d/1lbcaF9HyjH7sffVfYG_eOBm1hmj-kyK9/view?usp=sharing
+orderReducers.js => https://drive.google.com/file/d/18hESs4nvoxFN3bhJY2kpDNMbSjkxsHAK/view?usp=sharing
+store.js => https://drive.google.com/file/d/1sBTbEGZKOO3pvq5CjWGImZeGoJOulA7L/view?usp=sharing
+orderActions.js => https://drive.google.com/file/d/1AZiHZfH6pbu1ysu3he7n_e6KnuYgucw_/view?usp=sharing
+OrderListScreen.js => https://drive.google.com/file/d/1CvK7BM8RzzF1bLZEkbYEEq7rMEcgc9dt/view?usp=sharing
+App.js => https://drive.google.com/file/d/1Bxfr-G4TMRQPUkPZeIs1pIstObVpn7S1/view?usp=sharing
+
+=======================
+Mark Order As Delivered
+=======================
+order_views.py => https://drive.google.com/file/d/1gyVfjEV71fIZk4d_LAoOaorepe2r8YeO/view?usp=sharing
+order_urls.py => https://drive.google.com/file/d/1PqUb-CFF3CrsWZVqa2YZtQn9EREhNfDx/view?usp=sharing
+orderConstants.js => https://drive.google.com/file/d/1Ga9Sms4H7KYWCOajZ8IOL-ZGTopi1w2v/view?usp=sharing
+orderReducers.js => https://drive.google.com/file/d/1y1E0jy6995CYoIwWXtOFGsrDK8evz6m2/view?usp=sharing
+store.js => https://drive.google.com/file/d/1khOYf9WyZRjppZ-MZFkM0HZsNBk1n0Bm/view?usp=sharing
+orderActions.js => https://drive.google.com/file/d/19G-D8slhjgBknkMiXXeG2vD0_VX67DOK/view?usp=sharing
+OrderScreen.js => https://drive.google.com/file/d/16dY1OPMuAVTfCKm_5mtufb6M0FfpABtl/view?usp=sharing
+
+======================
+Create Review Endpoint
+======================
+product_views.py => https://drive.google.com/file/d/1pE0Lja1BzPxNlUM3Xa5Fsd8Unuj2C2m3/view?usp=sharing
+product_urls.py => https://drive.google.com/file/d/1NLFd-jc9AAGhTdpivd1tvRSjYGAcvtZG/view?usp=sharing
+serializers.py => https://drive.google.com/file/d/1gxP0Lsu_l4sJyyssGrrU7-46Dk3Wuh7t/view?usp=sharing
+models.py => https://drive.google.com/file/d/1nLunP06AZnBDdjjCoeSPY3Q0MAZZHHF-/view?usp=sharing
